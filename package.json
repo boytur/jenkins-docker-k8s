@@ -1,0 +1,23 @@
+{
+  "name": "k8s-jenkins",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start":"node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boytur/jenkins-docker-k8s.git"
+  },
+  "author": "boytur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boytur/jenkins-docker-k8s/issues"
+  },
+  "homepage": "https://github.com/boytur/jenkins-docker-k8s#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
