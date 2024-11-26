@@ -3,7 +3,7 @@ pipeline {
     environment {
         DOCKER_REPO = 'boytur/k8s-docker-stagging-env'
         IMAGE_TAG = "${env.BRANCH_NAME ?: 'latest'}-${env.GIT_COMMIT ?: 'unknown'}"
-    }
+    },
     stages {
         stage('Checkout') {
             steps {
