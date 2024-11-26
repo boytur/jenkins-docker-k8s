@@ -3,7 +3,7 @@ pipeline {
     environment {
         DOCKER_REGISTRY = 'docker.io'
         DOCKER_REPO = 'boytur/k8s-docker-stagging-env'
-        IMAGE_TAG = "${env.BRANCH_NAME}-${env.CHANGE_ID}"
+        IMAGE_TAG = "${env.BRANCH_NAME ?: 'latest'}-${env.GIT_COMMIT ?: 'unknown'}"
         REGISTRY_CREDENTIALS = 'dockerhub-credentials-id'
         K8S_NAMESPACE = 'default'
         REPLICAS = '1'
