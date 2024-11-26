@@ -17,8 +17,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/boytur/jenkins-docker-k8s.git'
             }
         }
-    }
-    stages {
         stage('Login to Docker Registry') {
             steps {
                 script {
