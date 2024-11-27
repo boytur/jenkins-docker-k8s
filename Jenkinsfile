@@ -1,7 +1,6 @@
 pipeline {
     agent any
     environment {
-        DOCKER_REPO = 'boytur/k8s-docker-stagging-env'
         IMAGE_TAG = "${env.BRANCH_NAME ?: 'latest'}-${env.GIT_COMMIT ?: 'unknown'}"
     }
     stages {
@@ -11,11 +10,11 @@ pipeline {
                 git branch: "${env.BRANCH_NAME}", url: 'https://github.com/boytur/jenkins-docker-k8s.git'
             }
         }
-        stage('Build Docker Image') {
+        stage('Display Branch Name') {
             steps {
                 script {
-                    // Build the Docker image locally (without pushing it to any registry)
-                    sh "docker build -t ${DOCKER_REPO}:${IMAGE_TAG} ."
+                    // Build the Docker image
+                    sh "echo 'Branch Name: ${env.BRANCH_NAME}'"
                 }
             }
         }
